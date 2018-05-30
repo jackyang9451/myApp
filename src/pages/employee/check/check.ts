@@ -41,7 +41,7 @@ export class CheckPage {
         if (flag) {
           this.showToast('已经签到')
         } else {
-          this.showToast('不符合签到条件')
+          this.showToast('不符合签到条件,请确认')
           console.log()
         }
       }

@@ -1,0 +1,32 @@
+<!--
+  Generated template for the UpdatePowerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>update-power</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div *ngIf="employee">
+        <ion-list>
+            <ion-item>
+              <ion-label>权限：</ion-label>
+              <ion-select [(ngModel)]="employee.power" interface="popover">
+                <ion-option value="0">科员</ion-option>
+                <ion-option value="1">副科</ion-option>
+                <ion-option value="2">科长</ion-option>
+                <ion-option value="3">副处级</ion-option>
+                <ion-option value="4">处长</ion-option>
+              </ion-select>
+            </ion-item>
+        </ion-list>
+        <button ion-button full (click)="submit()" >确认</button>
+    </div>
+</ion-content>

@@ -1,0 +1,89 @@
+<!--
+  Generated template for the UpdateEmployeePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>update-employee</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label floating>姓名：</ion-label>
+          <ion-input  [(ngModel)]="employee.empName" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>性别</ion-label>
+          <ion-select [(ngModel)]="employee.sex" interface="popover">
+              <ion-option value="女">女</ion-option>
+              <ion-option value="男">男</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>部门：</ion-label>
+            <ion-select [(ngModel)]="employee.deptId" interface="popover">
+                <ion-option value="1">刑事侦查支队</ion-option>
+                <ion-option value="2">反恐支队</ion-option>
+                <ion-option value="3">巡逻警察支队</ion-option>
+                <ion-option value="4">禁毒支队</ion-option>
+                <ion-option value="999">暂定</ion-option>
+                <ion-option value="1001">局长</ion-option>
+                <ion-option value="1002">常务副局长</ion-option>
+                <ion-option value="1003">常务副局长</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-label floating>职务：</ion-label>
+          <ion-select [(ngModel)]="dutyId" interface="popover">
+              <ion-option value="111111">暂定</ion-option>
+          </ion-select>
+        </ion-item> -->
+        <ion-item>
+          <ion-label floating>政治面貌：</ion-label>
+          <ion-select [(ngModel)]="employee.zzmm" interface="popover">
+              <ion-option value="中共党员">中共党员</ion-option>
+              <ion-option value="共青团员">共青团员</ion-option>
+              <ion-option value="致公党员">致公党员</ion-option>
+              <ion-option value="九三学社">九三学社</ion-option>
+              <ion-option value="群众">群众</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>用工性质：</ion-label>
+          <ion-select [(ngModel)]="employee.ygxz" interface="popover">
+              <ion-option value="非临时">非临时</ion-option>
+              <ion-option value="临时">临时</ion-option>
+          </ion-select>         
+        </ion-item>
+        <ion-item>
+          <ion-label floating>权限：</ion-label>
+          <ion-select [(ngModel)]="employee.power" interface="popover">
+              <ion-option value="0">科员</ion-option>
+              <ion-option value="1">副科</ion-option>
+              <ion-option value="2">科长</ion-option>
+              <ion-option value="3">副处级</ion-option>
+              <ion-option value="4">处级</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>上级：</ion-label>
+          <ion-select [(ngModel)]="employee.boss" interface="popover">
+              <ion-option value="1">成碧文（局长）</ion-option>
+              <ion-option value="2">乔亚民（常务副局长）</ion-option>
+              <ion-option value="3">张保平（副局长）</ion-option>
+              <ion-option value="4">范鹏飞（刑事侦查支队）</ion-option>
+              <ion-option value="7">刘钰俊（反恐支队）</ion-option>
+              <ion-option value="10">安小东（巡逻警察支队）</ion-option>
+              <ion-option value="13">冯强（禁毒支队）</ion-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+    <button ion-button full (click)="submit()">更新</button>
+</ion-content>

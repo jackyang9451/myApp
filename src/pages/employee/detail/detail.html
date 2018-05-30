@@ -1,0 +1,84 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <div *ngIf="employee">
+    <ion-card>
+        <ion-card-header>
+          姓名
+        </ion-card-header>
+        <ion-card-content>
+          {{employee.empName}}
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          综合个人信息： 
+        </ion-card-header>
+        <ion-card-content>
+          <ion-grid no-padding>
+            <ion-row>
+                <ion-col col-6><strong>性别: </strong>{{employee.sex}}</ion-col>
+                <ion-col col-6><strong>部门: </strong>{{employee.deptId | explainDeptId}}</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6><strong>职务: </strong>{{employee.deptId | explainDeptId}}【{{employee.power | explainPower}}】</ion-col>
+                <ion-col col-6><strong>政治面貌: </strong>{{employee.zzmm}}</ion-col>
+              </ion-row>
+          </ion-grid>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          用工性质：
+        </ion-card-header>
+        <ion-card-content>
+          {{employee.ygxz}}          
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            权限：
+        </ion-card-header>
+        <ion-card-content>
+          {{employee.power | explainPower}}          
+        </ion-card-content>
+    </ion-card>
+ </div>
+  <!-- <div *ngIf="employee">
+      <ion-grid>
+          <ion-row>
+            <ion-col col-12><strong>姓名: </strong>{{employee.empName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6><strong>性别: </strong>{{employee.sex}}</ion-col>
+            <ion-col col-6><strong>部门: </strong>{{employee.deptId | explainDeptId}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-6><strong>职务: </strong>{{employee.deptId | explainDeptId}}【{{employee.power | explainPower}}】</ion-col>
+            <ion-col col-6><strong>政治面貌: </strong>{{employee.zzmm}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><strong>用工性质：</strong>{{employee.ygxz}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><strong>权限：</strong>{{employee.power | explainPower}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><strong>上级：</strong>{{employee.boss | explainBoss}}</ion-col>
+          </ion-row>
+        </ion-grid>
+  </div> -->
+</ion-content>

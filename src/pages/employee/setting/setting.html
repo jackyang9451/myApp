@@ -1,0 +1,87 @@
+<!--
+  Generated template for the SettingPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>setting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-list>
+    <ion-list-header>设置</ion-list-header>
+
+    <ion-item>
+        <ion-avatar item-start>
+          <img src="../../../assets/imgs/touxiang_1.jpg">
+        </ion-avatar>
+        <h2>局座</h2>
+        <p>This town ain't big enough for the two of us!</p>
+      </ion-item>
+  </ion-list> -->
+
+  <ion-card>
+      <ion-card-header>
+          <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/touxiang_1.jpg">
+              </ion-avatar>
+              <h3>欢迎光临公安局绩效管理系统</h3>  
+              <h2>{{employee?.empName}}</h2>
+            </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+          <p>{{employee?.deptId | explainDeptId}}，{{employee?.power | explainPower}}</p>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <!-- <ion-card-content>
+          <button ion-item (click)="updatePower()">
+              <ion-icon name="beer" item-start></ion-icon>
+              赋予权限
+          </button>
+        
+            <button ion-item>
+              <ion-icon name="planet" item-start></ion-icon>
+              修改职位
+          </button>
+          管辖人员
+      </ion-card-content> -->
+      <ion-card-header>
+          管辖人员
+      </ion-card-header>
+
+      <ion-list>
+          <ion-item-sliding *ngFor="let employee of employees">
+              <ion-item>
+                <ion-icon name="person" item-start></ion-icon>
+                <h3>{{employee.empName}}</h3>
+                <!-- <p>{{employee.deptId | explainDeptId}}, {{employee.power | explainPower}}.</p> -->
+                <ion-note item-end>{{employee.deptId | explainDeptId}}, {{employee.power | explainPower}}.</ion-note>
+              </ion-item>
+              <ion-item-options>
+                <button ion-button color="primary" icon-start (click)="updatePower(employee)">
+                  <ion-icon name="text"></ion-icon>
+                  修改权限
+                </button>
+                <button ion-button color="secondary" icon-start (click)="updatePosition(employee)">
+                  <ion-icon name="call"></ion-icon>
+                  修改职位
+                </button>
+              </ion-item-options>
+            </ion-item-sliding>
+      </ion-list>
+  </ion-card>
+  <!-- <ion-list inset>
+      <button ion-item *ngFor="let employee of employees" (click)="openMenu(employee)">
+        {{ employee.empName }}
+      </button> 
+  </ion-list> -->
+</ion-content>

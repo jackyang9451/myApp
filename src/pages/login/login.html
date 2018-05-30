@@ -1,0 +1,68 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>表明你的身份</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-fab top right #fab>
+        <button ion-fab>角色</button>
+        <ion-fab-list side="left">
+          <button ion-fab color="primary" (click)="changeHr(fab)">管理</button>
+          <button ion-fab (click)="changeEmp(fab)" >职工</button>
+        </ion-fab-list>
+    </ion-fab>
+  <!-- 这里是选择登录是管理员还是员工 用来选择跳到哪一个tabs
+  <ion-grid>
+      <ion-row>
+        <ion-col col-6><button ion-button color="secondary" outline>员工登录</button></ion-col>
+        <ion-col col-4 offset-2><button ion-button color="secondary" outline>人事部登录</button></ion-col>
+      </ion-row>
+  </ion-grid>
+  这里就是要进行登录验证 -->
+  
+  <!-- 刚刚登陆的时候这里应该是职工登陆 -->
+  <div *ngIf="flag"> 
+      <ion-list>
+
+          <ion-item>
+            <ion-label floating >职工工号</ion-label>
+            <ion-input type="text" [(ngModel)]="empId"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>口令</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        <button ion-button block outline (click)="validateEmp()">开始新的一天</button>
+  </div>
+
+  <div *ngIf="!flag">
+      <ion-list>
+
+          <ion-item>
+            <ion-label floating >人事部账号</ion-label>
+            <ion-input type="text" [(ngModel)]="hrUserId"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>密码</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+        <button ion-button block outline (click)="validateHr()">进行管理</button>
+  </div>
+
+</ion-content>
